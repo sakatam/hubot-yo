@@ -1,0 +1,26 @@
+{
+  "name": "hubot-yo",
+  "version": "0.0.0",
+  "description": "the most useless hubot script",
+  "main": "index.coffee",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/sakatam/hubot-yo.git"
+  },
+  "keywords": [
+    "hubot-scripts",
+    "hubot"
+  ],
+  "author": "sakatam",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sakatam/hubot-yo/issues"
+  },
+  "homepage": "https://github.com/sakatam/hubot-yo",
+  "dependencies": {
+    "coffee-script": "^1.7.1"
+  }
+}
