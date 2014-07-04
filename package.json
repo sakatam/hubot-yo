@@ -1,6 +1,6 @@
 {
   "name": "hubot-yo",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "the most useless hubot script",
   "main": "index.coffee",
   "scripts": {
