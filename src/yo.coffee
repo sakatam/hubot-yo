@@ -36,4 +36,5 @@ module.exports = (robot) ->
 
   if room?
     robot.router.get "/yo", (req, res) ->
-      robot.messageRoom room, "received Yo from #{req.params.username}"
+      robot.messageRoom room, "received Yo from #{req.query.username}"
+      res.end()
