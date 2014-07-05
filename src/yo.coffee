@@ -13,6 +13,8 @@
 # Author:
 #   sakatam
 
+Yo = require "yo-api"
+
 module.exports = (robot) ->
   token = process.env.HUBOT_YO_API_TOKEN
   name = process.env.HUBOT_YO_NAME
@@ -23,12 +25,13 @@ module.exports = (robot) ->
   robot.logger.error "HUBOT_YO_ROOM is not set" unless room?
 
   if token?
+    yo = new Yo token
     robot.respond /yo(all)?$/, (msg) ->
-      http = robot.http("http://api.justyo.co").path("yoall/")
-      # XXX: robot.http() doesn't take option - https://github.com/github/hubot/pull/612
-      http.options.headers["Content-Type"] = "application/x-www-form-urlencoded"
-      http.post("api_token=#{token}") (err, res, body) ->
-        msg.reply "sent Yo to all subscribers" unless err
+      yo.yoall (err) ->
+        if err?
+          robot.logger.error err
+          return msg.reply "something went wrong on sending Yo"
+        msg.reply "sent Yo to all subscribers"
 
   if name?
     robot.respond /yo name/, (msg) ->
