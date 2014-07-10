@@ -33,6 +33,14 @@ module.exports = (robot) ->
           return msg.reply "something went wrong on sending Yo"
         msg.reply "sent Yo to all subscribers"
 
+    robot.respond /yo (\w+)$/, (msg) ->
+      username = msg.match[1].toUpperCase()
+      yo.yo username, (err) ->
+        if err?
+          robot.logger.error err
+          return msg.reply "something went wrong on sending Yo"
+        msg.reply "sent Yo to #{username}"
+
   if name?
     robot.respond /yo name/, (msg) ->
       msg.reply "my yo name is #{name}"

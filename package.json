@@ -22,6 +22,6 @@
   "homepage": "https://github.com/sakatam/hubot-yo",
   "dependencies": {
     "coffee-script": "^1.7.1",
-    "yo-api": "^0.0.0"
+    "yo-api": "^0.1.0"
   }
 }
