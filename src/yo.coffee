@@ -33,7 +33,7 @@ module.exports = (robot) ->
           return msg.reply "something went wrong on sending Yo"
         msg.reply "sent Yo to all subscribers"
 
-    robot.respond /yo (\w+)$/, (msg) ->
+    robot.respond /yo ((?!name$).+)$/, (msg) ->
       username = msg.match[1].toUpperCase()
       yo.yo username, (err) ->
         if err?
@@ -42,7 +42,7 @@ module.exports = (robot) ->
         msg.reply "sent Yo to #{username}"
 
   if name?
-    robot.respond /yo name/, (msg) ->
+    robot.respond /yo name$/, (msg) ->
       msg.reply "my yo name is #{name}"
 
   if room?
