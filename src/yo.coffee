@@ -7,8 +7,10 @@
 #   HUBOT_YO_ROOM (optional)
 #
 # Commands:
-#   hubot yo - sends yo to subscribers
+#   hubot yo(all) - sends yo to all subscribers
+#   hubot yo {{username}} - yo indivisually
 #   hubot yo name - replies yo name
+#   hubot yo subs(cribers) - replies total subscribers count
 #
 # Author:
 #   sakatam
